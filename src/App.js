@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/album" element={<AlbumPage />} />
+        <Route path="/album/:id" element={<AlbumPage />} />
         {/* {<Route to="/artist" element={} />
       <Route to="/album" element={} />
       <Route to="/*" element={} /> */}

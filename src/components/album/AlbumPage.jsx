@@ -1,9 +1,39 @@
 import "../comp_css/album.css";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const AlbumPage = () => {
+
+const AlbumPage = () => { 
+  const id = useParams()
+  const [data, setData] = useState([])
+  const [show, setToShow] = useState(false)
+
+  const getAlbumData = async () => {
+    try{
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id.id)
+      let fetchedData = await response.json()
+      if(response.ok){
+        setData(fetchedData)
+        setToShow(true)
+      }
+      else{
+        console.log("Error fetching")
+      }
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getAlbumData()
+  },[])
+
+
   return (
     <>
-      <div className="main-container">
+      {show && (
+        <div className="main-container">
         <div className="topbar">
           <div className="prev-next-buttons">
             <button type="button" className="fa fas fa-chevron-left"></button>
@@ -26,18 +56,18 @@ const AlbumPage = () => {
             <img
               id="album-artwork-top"
               alt=""
-              src="https://via.placeholder.com/150"
+              src={data.cover_big}
             />
           </div>
           <div className="album-info-cont">
             <h3>Album</h3>
-            <h1 id="album-name">Album Name</h1>
+            <h1 id="album-name">{data.title}</h1>
             <h6>
-              <span id="artist-name">By</span>
+              <span id="artist-name">{data.artist.name}</span>
               <i className="fa-sharp fa-solid fa-circle"></i>
-              <span id="album-year">Year</span>{" "}
+              <span id="album-year">{data.release_date}</span>{" "}
               <i className="fa-sharp fa-solid fa-circle"></i>
-              <span id="song-num">#songs</span>,{" "}
+              <span id="song-num">{data.nb_tracks}</span>,{" "}
               <span id="album-duration"></span>
             </h6>
           </div>
@@ -67,11 +97,14 @@ const AlbumPage = () => {
           <hr />
           <div className="album-list">
             <table className="table">
-              <tbody id="track-list"></tbody>
+              <tbody id="track-list">
+                
+              </tbody>
             </table>
           </div>
         </div>
       </div>
+      )}
       </>
   );
 };

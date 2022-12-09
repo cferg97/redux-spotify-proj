@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { getTrackDataAction } from "../../redux/actions";
 
 const Tracks = () => {
@@ -23,7 +24,7 @@ const Tracks = () => {
             </div>
             <div class="card-details">
               <p class="title">{i.album.title}</p>
-              <a href="artist.html?id=${item.artist.id}" class="artist">{i.artist.name}</a>
+              <Link to={"/album/"} className="artist">{i.artist.name}</Link>
             </div>
           </div>
     ))}

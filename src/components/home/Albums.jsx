@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAlbumDataAction } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 const Albums = () => {
   const dispatch = useDispatch();
   let albums = useSelector((state) => state.data.albums);
 
   const endpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=rise";
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica";
   useEffect(() => {
     dispatch(getAlbumDataAction(endpoint));
-    console.log([albums]);
   }, []);
   return (
     <>
@@ -21,9 +21,9 @@ const Albums = () => {
           </div>
           <div class="card-details">
             <p class="title">{i.album.title}</p>
-            <a href="artist.html?id=${item.artist.id}" class="artist">
+            <Link to={"/album/" + i.album.id} class="artist">
               {i.artist.name}
-            </a>
+            </Link>
           </div>
         </div>
       ))}
