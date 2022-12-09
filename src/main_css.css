@@ -1,0 +1,38 @@
+:root {
+    --green: rgb(30, 215, 96);
+    --light-black: rgb(40, 40, 40);
+    --black: rgb(24, 24, 24);
+    --dark-grey: rgb(54, 54, 54);
+    --grey: rgb(170, 170, 170);
+    --sand: rgb(200, 200, 200);
+    --white: rgb(255, 255, 255);
+    --blue: #4688d7;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    color: white;
+    height: 100%;
+    background-color: var(--black);
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: var(--grey);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--sand);
+}
