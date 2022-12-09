@@ -9,8 +9,8 @@ const MusicPlayer = () => {
         <div className="album-details">
             <img alt="" className="album-artwork" src="http://placekitten.com/g/200/200"/>
             <div className="album-text">
-                <h4>{trackName}</h4>
-                <h5>{artistName}</h5>
+                <h4>{trackName ? trackName : "play a song"}</h4>
+                <h5>{artistName ? artistName : "to view here"}</h5>
             </div>
             <div className="icons">
                 <i className="bi bi-heart"></i>

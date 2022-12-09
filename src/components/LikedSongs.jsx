@@ -1,10 +1,11 @@
 import "./comp_css/liked_songs.css"
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { playSongArtistAction, playSongTrackAction } from "../redux/actions";
 const LikedSongs = () => {
     const songs = useSelector((state) => state.likedSongs.list)
     console.log(songs)
-
+    const dispatch = useDispatch()
 
     return ( 
         <div className="main-container">
@@ -64,9 +65,14 @@ const LikedSongs = () => {
             <table className="table">
               <tbody id="track-list">
                 {songs.map((s, index) => (
-                                      <tr>
+                                      <tr onClick={() =>
+                                        {
+                                          dispatch(playSongArtistAction(s.artist.name))
+                                          dispatch(playSongTrackAction(s.title))
+                                        }
+                                      }>
                                       <td class="audio"><span class="hidden"><i class="bi bi-soundwave"></i></span>{index+1}</td>
-                                      <td style = {{width: "60vw"}}><Link to={"/album/"}><span id="artist-sub">{s}</span></Link></td>
+                                      <td style = {{width: "60vw"}}><span id="artist-sub">{s}</span></td>
                                       </tr>
                 ))}
               </tbody>
