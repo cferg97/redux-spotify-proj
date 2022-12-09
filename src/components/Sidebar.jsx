@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <>
     <div class="sidebar">
-      <img class="logo" src={spotify_logo} alt="Spotify Logo" />
+      <Link to="/"><img class="logo" src={spotify_logo} alt="Spotify Logo" /></Link>
       <div class="navigation">
         <ul>
           <li>

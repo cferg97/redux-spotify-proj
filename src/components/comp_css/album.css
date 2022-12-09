@@ -245,6 +245,10 @@ td {
     padding: 10px;
 }
 
+tr:hover, td:hover{
+    cursor: pointer;
+}
+
 #artist-sub {
     color: var(--grey);
 }

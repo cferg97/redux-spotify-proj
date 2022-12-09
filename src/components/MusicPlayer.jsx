@@ -10,7 +10,7 @@ const MusicPlayer = () => {
             <img alt="" className="album-artwork" src="http://placekitten.com/g/200/200"/>
             <div className="album-text">
                 <h4>{trackName ? trackName : "play a song"}</h4>
-                <h5>{artistName ? artistName : "to view here"}</h5>
+                <h5>{artistName ? artistName : "pls"}</h5>
             </div>
             <div className="icons">
                 <i className="bi bi-heart"></i>
