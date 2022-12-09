@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import spotify_logo from "./spotify-logo.png";
 import "./comp_css/sidebar.css"
+import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -14,10 +15,10 @@ const Sidebar = () => {
       <div class="navigation">
         <ul>
           <li>
-            <a href="#">
+            <Link to="/">
               <span class="fa fa-home"></span>
               <span>Home</span>
-            </a>
+            </Link>
           </li>
 
           <li>
@@ -54,10 +55,10 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <a href="#">
+            <Link to="/liked">
               <span class="fa fas fa-heart"></span>
               <span>Liked Songs</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

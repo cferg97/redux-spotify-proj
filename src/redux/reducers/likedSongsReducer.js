@@ -9,7 +9,7 @@ const likedSongsReducer = (state = initialState, action) => {
     case LIKE_SONG:
       return {
         ...state,
-        list: [...state.list, action.payload],
+        list: [...new Set([...state.list, action.payload])],
       };
     case REMOVE_LIKE_SONG:
       return {

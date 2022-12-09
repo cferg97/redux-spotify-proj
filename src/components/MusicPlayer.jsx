@@ -1,39 +1,42 @@
 import "./comp_css/musicplayer.css"
+import { useSelector } from "react-redux";
 
 const MusicPlayer = () => {
+    const trackName = useSelector((state) => state.playSongs.track)
+    const artistName = useSelector((state) => state.playSongs.artist)
     return ( 
-        <div class="music-player">
-        <div class="album-details">
-            <img alt="" class="album-artwork" src="https://upload.wikimedia.org/wikipedia/en/2/27/Daft_Punk_-_Discovery.png"/>
-            <div class="album-text">
-                <h4>One More Time</h4>
-                <h5>Daft Punk</h5>
+        <div className="music-player">
+        <div className="album-details">
+            <img alt="" className="album-artwork" src="http://placekitten.com/g/200/200"/>
+            <div className="album-text">
+                <h4>{trackName}</h4>
+                <h5>{artistName}</h5>
             </div>
-            <div class="icons">
-                <i class="bi bi-heart"></i>
-                <i class="bi bi-pip"></i>
+            <div className="icons">
+                <i className="bi bi-heart"></i>
+                <i className="bi bi-pip"></i>
             </div>
         </div>
     
-        <div class="player-controls">
-            <div class="control-buttons">
-                <i class="bi bi-shuffle" style={{fontSize: "0.5em;"}}></i>
-                <i class="bi bi-skip-start" style={{fontSize: "0.6em;"}}></i>
-                <i class="bi bi-play-fill" style={{fontSize: "1em;"}}></i>
-                <i class="bi bi-skip-end" style={{fontSize: "0.6em;"}}></i>
-                <i class="bi bi-repeat" style={{fontSize: "0.6em;"}}></i>
+        <div className="player-controls">
+            <div className="control-buttons">
+                <i className="bi bi-shuffle" style={{fontSize: "0.5em"}}></i>
+                <i className="bi bi-skip-start" style={{fontSize: "0.6em"}}></i>
+                <i className="bi bi-play-fill" style={{fontSize: "1em"}}></i>
+                <i className="bi bi-skip-end" style={{fontSize: "0.6em"}}></i>
+                <i className="bi bi-repeat" style={{fontSize: "0.6em"}}></i>
             </div>
-            <div class="bar-container">
+            <div className="bar-container">
                 <span id="time-remain">0:00</span>
-                <div class="music-bar"></div>
+                <div className="music-bar"></div>
                 <span id="time-total">0:00</span>
             </div>
         </div>  
     
-        <div class="media-controls">
-            <i class="bi bi-music-note-list"></i>
-            <i class="bi bi-speaker"></i>
-            <i class="fa-solid fa-volume-high"></i>
+        <div className="media-controls">
+            <i className="bi bi-music-note-list"></i>
+            <i className="bi bi-speaker"></i>
+            <i className="fa-solid fa-volume-high"></i>
             <input id="volume" type="range"/>
         </div>
     </div>

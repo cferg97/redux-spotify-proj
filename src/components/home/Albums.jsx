@@ -8,7 +8,7 @@ const Albums = () => {
   let albums = useSelector((state) => state.data.albums);
 
   const endpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica";
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=scandroid";
   useEffect(() => {
     dispatch(getAlbumDataAction(endpoint));
   }, []);
