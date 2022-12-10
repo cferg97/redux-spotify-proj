@@ -2,8 +2,12 @@ import "../comp_css/home.css";
 import Tracks from "./Tracks";
 import Pills from "./Pills";
 import Albums from "./Albums";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Spotify | Home"
+  })
   return (
     <div className="container">
       <div className="top-nav">

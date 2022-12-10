@@ -23,6 +23,7 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
+    document.title = "Spotify | Search Results"
     fetchResults();
   }, [query]);
 

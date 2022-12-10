@@ -2,10 +2,15 @@ import "./comp_css/liked_songs.css"
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { playSongArtistAction, playSongTrackAction } from "../redux/actions";
+import { useEffect } from "react";
 const LikedSongs = () => {
     const songs = useSelector((state) => state.likedSongs.list)
     console.log(songs)
     const dispatch = useDispatch()
+
+    useEffect(() => {
+      document.title = "Spotify | Liked Songs"
+    }, [])
 
     return ( 
         <div className="main-container">

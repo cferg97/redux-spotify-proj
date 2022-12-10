@@ -7,7 +7,7 @@ const Pills = () => {
   let pills = useSelector((state) => state.data.pills);
 
   const endpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=alternative";
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=party";
 
   useEffect(() => {
     dispatch(getPillDataAction(endpoint));

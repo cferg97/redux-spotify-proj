@@ -38,7 +38,7 @@ const MusicPlayer = () => {
             <i className="bi bi-music-note-list"></i>
             <i className="bi bi-speaker"></i>
             <i className="fa-solid fa-volume-high"></i>
-            <input id="volume" type="range"/>
+            <input id="volume" type="range" min="0" max="100" defaultValue="75"/>
         </div>
     </div>
      );

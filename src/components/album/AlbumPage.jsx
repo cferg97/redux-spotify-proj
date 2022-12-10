@@ -24,6 +24,7 @@ const AlbumPage = () => {
       if (response.ok) {
         setData(fetchedData);
         setToShow(true);
+        
       } else {
         console.log("Error fetching");
       }
@@ -34,6 +35,7 @@ const AlbumPage = () => {
 
   useEffect(() => {
     getAlbumData();
+    document.title = "Spotify | Album"
   }, []);
 
   const defineDuration = (t) => {
