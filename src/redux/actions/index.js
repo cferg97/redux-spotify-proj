@@ -10,21 +10,38 @@ export const GET_TRACK_DATA = "GET_TRACK_DATA";
 export const GET_ALBUM_DATA = "GET_ALBUM_DATA";
 export const GET_PILL_DATA = "GET_PILL_DATA";
 export const PLAY_SONG_ARTIST = "PLAY_SONG_ARTIST";
-export const PLAY_SONG_TRACK = "PLAY_SONG_TRACK"
+export const PLAY_SONG_TRACK = "PLAY_SONG_TRACK";
+export const PLAY_SONG_ART = "PLAY_SONG_ART";
+export const SET_QUERY = "SET_QUERY"
+export const SEARCH_FOR_MUSIC = "SEARCH_FOR_MUSIC"
+
+export const setSearchQueryAction = (i) => {
+  return{
+    type: SET_QUERY,
+    payload: i
+  }
+}
 
 export const playSongArtistAction = (i) => {
   return {
     type: PLAY_SONG_ARTIST,
-    payload: i
+    payload: i,
   };
 };
 
 export const playSongTrackAction = (i) => {
-    return {
-        type: PLAY_SONG_TRACK,
-        payload: i
-    }
-}
+  return {
+    type: PLAY_SONG_TRACK,
+    payload: i,
+  };
+};
+ 
+export const playSongArtAction = (i) => {
+  return {
+    type: PLAY_SONG_ART,
+    payload: i,
+  };
+};
 
 export const createPlaylistAction = (i) => {
   return {

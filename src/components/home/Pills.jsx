@@ -15,13 +15,13 @@ const Pills = () => {
   }, []);
   return (
     <>
-      {pills.slice(5,15).map((i) => (
-        <div class="track-pill">
-          <div class="img-container">
+      {pills.slice(0, 10).map((i, index) => (
+        <div className="track-pill" key={index + 2}>
+          <div className="img-container">
             <img src={i.artist.picture_medium} alt="" />
           </div>
-          <div class="track-details">
-            <p class="text">{i.title}</p>
+          <div className="track-details">
+            <p className="text">{i.title}</p>
           </div>
         </div>
       ))}

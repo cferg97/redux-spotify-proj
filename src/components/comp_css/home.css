@@ -403,6 +403,8 @@ body {
         position: relative;
     }
 
+    
+
     .tracks-row .cards-container .card .img-container::before {
         content: '';
         position: absolute;
@@ -444,6 +446,7 @@ body {
         width: 120%;
         transform: translateX(-10%);
         height: auto;
+        object-fit: cover;
     }
 
     .tracks-row .cards-container::-webkit-scrollbar {

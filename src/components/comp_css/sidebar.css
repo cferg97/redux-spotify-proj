@@ -50,6 +50,7 @@
     outline: none;
     color: white;
     height: 20px;
+    user-select: all;
 }
 
 .sidebar .navigation ul li a .search-field::placeholder {

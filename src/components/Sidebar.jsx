@@ -1,10 +1,24 @@
-import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { setSearchQueryAction } from "../redux/actions";
 import spotify_logo from "./spotify-logo.png";
 import "./comp_css/sidebar.css";
-import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      setTimeout(() => {
+        dispatch(setSearchQueryAction(e.target.value));
+        navigate("/search-results/");
+      }, 500);
+    } else {
+      return;
+    }
+  };
+
   return (
     <>
       <div className="sidebar">
@@ -24,10 +38,13 @@ const Sidebar = () => {
               <a href="#">
                 <span className="fa fa-search"></span>
                 <input
+                  onKeyDown={(e) => {
+                    handleEnter(e);
+                  }}
                   type="text"
                   className="search-field"
                   id="searchField"
-                  placeholder="Search artists/tracks"
+                  placeholder="Search artists/albums"
                 />
               </a>
             </li>
@@ -49,8 +66,6 @@ const Sidebar = () => {
                 <span>Create Playlist</span>
               </a>
             </li>
-            <li></li>
-
             <li>
               <Link to="/liked">
                 <span className="fa fas fa-heart"></span>

@@ -1,8 +1,9 @@
-import { PLAY_SONG_ARTIST, PLAY_SONG_TRACK } from "../actions";
+import { PLAY_SONG_ARTIST, PLAY_SONG_TRACK, PLAY_SONG_ART } from "../actions";
 
 const initialState = {
     track: "",
     artist: "",
+    art: "",
 }
 
 const playSongReducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const playSongReducer = (state = initialState, action) => {
             return{
                 ...state,
                 track: action.payload
+            }
+
+        case PLAY_SONG_ART:
+            return{
+                ...state,
+                art: action.payload
             }
         
         default:

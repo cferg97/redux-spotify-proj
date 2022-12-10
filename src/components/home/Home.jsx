@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import "../comp_css/home.css";
-import { useSelector, useDispatch } from "react-redux";
 import Tracks from "./Tracks";
 import Pills from "./Pills";
 import Albums from "./Albums";
@@ -11,10 +9,17 @@ const Home = () => {
       <div className="top-nav">
         <div className="navigation-btns">
           <div className="previous">
-            <img src="https://knoxmuseum.org/wp-content/uploads/2016/06/chevron-left-white.png" alt="" />
+            <img
+              src="https://knoxmuseum.org/wp-content/uploads/2016/06/chevron-left-white.png"
+              alt=""
+            />
           </div>
           <div className="next">
-            <img src="https://knoxmuseum.org/wp-content/uploads/2016/06/chevron-left-white.png" style={{transform: "scaleX(-1)"}}alt="" />
+            <img
+              src="https://knoxmuseum.org/wp-content/uploads/2016/06/chevron-left-white.png"
+              style={{ transform: "scaleX(-1)" }}
+              alt=""
+            />
           </div>
         </div>
         <div className="account-info">

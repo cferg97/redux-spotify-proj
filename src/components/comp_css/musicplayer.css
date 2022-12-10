@@ -26,6 +26,7 @@
 }
 
 .album-details {
+    width: 20rem;
     margin: 10px;
     margin-left: 15px;
     display: flex;

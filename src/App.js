@@ -6,6 +6,7 @@ import LikedSongs from "./components/LikedSongs";
 import Sidebar from "./components/Sidebar";
 import MusicPlayer from "./components/MusicPlayer";
 import "./main_css.css";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   return (
@@ -19,9 +20,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/album/:id" element={<AlbumPage />} />
         <Route path="/liked/" element={<LikedSongs />} />
-        {/* {<Route to="/artist" element={} />
-      <Route to="/album" element={} />
-      <Route to="/*" element={} /> */}
+        <Route path="/search-results/" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );

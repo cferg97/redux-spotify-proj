@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 const MusicPlayer = () => {
     const trackName = useSelector((state) => state.playSongs.track)
     const artistName = useSelector((state) => state.playSongs.artist)
+    const albumArt = useSelector((state) => state.playSongs.art)
     return ( 
         <div className="music-player">
         <div className="album-details">
-            <img alt="" className="album-artwork" src="http://placekitten.com/g/200/200"/>
+            <img alt="" className="album-artwork" src={albumArt}/>
             <div className="album-text">
                 <h4>{trackName ? trackName : "play a song"}</h4>
                 <h5>{artistName ? artistName : "pls"}</h5>

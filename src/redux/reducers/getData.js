@@ -3,7 +3,7 @@ import { GET_ALBUM_DATA, GET_PILL_DATA, GET_TRACK_DATA } from "../actions";
 const initialState = {
     tracks: [],
     albums: [],
-    pills: []
+    pills: [],
 }
 
 const dataReducer = (state = initialState, action) => {

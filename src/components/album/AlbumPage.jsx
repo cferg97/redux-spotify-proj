@@ -6,6 +6,7 @@ import {
   likeSongAction,
   playSongArtistAction,
   playSongTrackAction,
+  playSongArtAction,
 } from "../../redux/actions";
 
 const AlbumPage = () => {
@@ -124,18 +125,15 @@ const AlbumPage = () => {
                         {index + 1}
                       </td>
                       <td
-                        onClick={() =>
-                          {
-                            dispatch(playSongArtistAction(i.artist.name))
-                            dispatch(playSongTrackAction(i.title))
-                          }
-                        }
+                        onClick={() => {
+                          dispatch(playSongArtistAction(i.artist.name));
+                          dispatch(playSongTrackAction(i.title));
+                          dispatch(playSongArtAction(i.album.cover));
+                        }}
                         style={{ width: "60vw" }}
                       >
                         {i.title} <br />{" "}
-                        <a href="/artist.html?id=${album.artist.id}">
-                          <span id="artist-sub">{data.artist.name}</span>
-                        </a>
+                        <span id="artist-sub">{data.artist.name}</span>
                       </td>
                       <td>{defineDuration(i.duration)}</td>
                     </tr>
