@@ -12,8 +12,25 @@ export const GET_PILL_DATA = "GET_PILL_DATA";
 export const PLAY_SONG_ARTIST = "PLAY_SONG_ARTIST";
 export const PLAY_SONG_TRACK = "PLAY_SONG_TRACK";
 export const PLAY_SONG_ART = "PLAY_SONG_ART";
+export const PLAY_SONG_DURATION = "PLAY_SONG_DURATION"
+export const PLAY_SONG_MUSIC = "PLAY_SONG_MUSIC"
 export const SET_QUERY = "SET_QUERY"
 export const SEARCH_FOR_MUSIC = "SEARCH_FOR_MUSIC"
+
+
+export const setMusicPlay = (i) => {
+  return{
+    type: PLAY_SONG_MUSIC,
+    payload: i
+  }
+}
+
+export const setMusicDurationAction = (i) => {
+  return{
+    type: PLAY_SONG_DURATION,
+    payload: i
+  }
+}
 
 export const setSearchQueryAction = (i) => {
   return{

@@ -2,11 +2,14 @@ import "../comp_css/album.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   likeSongAction,
   playSongArtistAction,
   playSongTrackAction,
   playSongArtAction,
+  setMusicDurationAction,
+  setMusicPlay,
 } from "../../redux/actions";
 
 const AlbumPage = () => {
@@ -14,6 +17,9 @@ const AlbumPage = () => {
   const id = useParams();
   const [data, setData] = useState([]);
   const [show, setToShow] = useState(false);
+  const favesList = useSelector((state) => state.likedSongs.list);
+
+  
 
   const getAlbumData = async () => {
     try {
@@ -24,7 +30,6 @@ const AlbumPage = () => {
       if (response.ok) {
         setData(fetchedData);
         setToShow(true);
-        
       } else {
         console.log("Error fetching");
       }
@@ -35,12 +40,13 @@ const AlbumPage = () => {
 
   useEffect(() => {
     getAlbumData();
-    document.title = "Spotify | Album"
+    document.title = "Spotify | Album";
   }, []);
 
   const defineDuration = (t) => {
     return Math.floor(t / 60) + ":" + ("0" + Math.floor(t % 60)).slice(-2);
-  };
+  };  
+
 
   return (
     <>
@@ -78,7 +84,7 @@ const AlbumPage = () => {
                 <i className="fa-sharp fa-solid fa-circle"></i>
                 <span id="album-year"> Released {data.release_date}</span>{" "}
                 <i className="fa-sharp fa-solid fa-circle"></i>
-                <span id="song-num"> {data.nb_tracks} tracks</span>,{" "}
+                <span id="song-num"> {data.nb_tracks} songs</span>{" "}
                 <span id="album-duration"></span>
               </h6>
             </div>
@@ -110,27 +116,21 @@ const AlbumPage = () => {
               <table className="table">
                 <tbody id="track-list">
                   {data.tracks.data.map((i, index) => (
-                    <tr>
-                      <td
-                        onClick={() =>
-                          dispatch(
-                            likeSongAction(i.title + " by " + i.artist.name)
-                          )
-                        }
-                      >
-                        <i class="fa-regular fa-heart"></i>
+                    <tr key={index + 54}>
+                      <td onClick={() => {
+                        dispatch(likeSongAction(i))
+                      }}>
+                        
+                        <i className="fa-regular fa-heart"></i>
                       </td>
-                      <td class="audio">
-                        <span class="hidden">
-                          <i class="bi bi-soundwave"></i>
-                        </span>
-                        {index + 1}
-                      </td>
+                      <td>{index + 1}</td>
                       <td
                         onClick={() => {
                           dispatch(playSongArtistAction(i.artist.name));
                           dispatch(playSongTrackAction(i.title));
                           dispatch(playSongArtAction(i.album.cover));
+                          dispatch(setMusicDurationAction(i.duration))
+                          dispatch(setMusicPlay(i.preview))
                         }}
                         style={{ width: "60vw" }}
                       >

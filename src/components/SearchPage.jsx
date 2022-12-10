@@ -75,7 +75,7 @@ const SearchPage = () => {
                   <div
                     class="card"
                     key={i.album.id}
-                    style={{ marginBottom: "5px" }}
+                    style={{ marginBottom: "10px", marginRight: "10px" }}
                   >
                     <div class="img-container">
                       <Link to={"/album/" + i.album.id}>
