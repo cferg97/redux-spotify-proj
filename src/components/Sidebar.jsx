@@ -8,6 +8,7 @@ import { useState } from "react";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const [playList, showPlaylist] = useState(false);
   const listOfPL = useSelector((state) => state.playlists.list);
 

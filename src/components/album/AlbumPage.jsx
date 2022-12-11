@@ -19,7 +19,13 @@ const AlbumPage = () => {
   const [show, setToShow] = useState(false);
   const favesList = useSelector((state) => state.likedSongs.list);
 
-  
+  const checkLike = (i) => {
+    if (favesList.includes(i)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   const getAlbumData = async () => {
     try {
@@ -43,10 +49,11 @@ const AlbumPage = () => {
     document.title = "Spotify | Album";
   }, []);
 
+ 
+
   const defineDuration = (t) => {
     return Math.floor(t / 60) + ":" + ("0" + Math.floor(t % 60)).slice(-2);
-  };  
-
+  };
 
   return (
     <>
@@ -117,11 +124,18 @@ const AlbumPage = () => {
                 <tbody id="track-list">
                   {data.tracks.data.map((i, index) => (
                     <tr key={index + 54}>
-                      <td onClick={() => {
-                        dispatch(likeSongAction(i))
-                      }}>
-                        
-                        <i className="fa-regular fa-heart"></i>
+                      <td
+                        onClick={() => {
+                          dispatch(likeSongAction(i));
+                        }}
+                      >
+                        <span>
+                        {checkLike(i) ? (
+                          <i className="fa-solid fa-heart"></i>
+                        ) : (
+                          <i className="fa-regular fa-heart"></i>
+                        )}
+                        </span>
                       </td>
                       <td>{index + 1}</td>
                       <td
@@ -129,8 +143,8 @@ const AlbumPage = () => {
                           dispatch(playSongArtistAction(i.artist.name));
                           dispatch(playSongTrackAction(i.title));
                           dispatch(playSongArtAction(i.album.cover));
-                          dispatch(setMusicDurationAction(i.duration))
-                          dispatch(setMusicPlay(i.preview))
+                          dispatch(setMusicDurationAction(i.duration));
+                          dispatch(setMusicPlay(i.preview));
                         }}
                         style={{ width: "60vw" }}
                       >
