@@ -1,9 +1,6 @@
-export const SET_USER = "SET_USER";
-export const LOGOUT_USER = "LOGOUT_USER";
 export const CREATE_PLAYLIST = "CREATE_PLAYLIST";
 export const DELETE_PLAYLIST = "DELETE_PLAYLIST";
 export const ADD_TO_PLAYLIST = "ADD_TO_PLAYLIST";
-export const REMOVE_FROM_PLAYLIST = "REMOVE_FROM_PLAYLIST";
 export const LIKE_SONG = "LIKE_SONG";
 export const REMOVE_LIKE_SONG = "REMOVE_LIKE_SONG";
 export const GET_TRACK_DATA = "GET_TRACK_DATA";
@@ -16,6 +13,7 @@ export const PLAY_SONG_DURATION = "PLAY_SONG_DURATION"
 export const PLAY_SONG_MUSIC = "PLAY_SONG_MUSIC"
 export const SET_QUERY = "SET_QUERY"
 export const SEARCH_FOR_MUSIC = "SEARCH_FOR_MUSIC"
+
 
 
 export const setMusicPlay = (i) => {

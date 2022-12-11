@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAlbumDataAction } from "../../redux/actions";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ const Albums = () => {
   let albums = useSelector((state) => state.data.albums);
 
   const endpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=scandroid";
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=DEADLIFE";
   useEffect(() => {
     dispatch(getAlbumDataAction(endpoint));
   }, []);
@@ -18,14 +18,12 @@ const Albums = () => {
         <div className="card" key={index + 9}>
           <div className="img-container">
             <Link to={"/album/" + i.album.id}>
-            <img src={i.album.cover_medium} alt="" />
+              <img src={i.album.cover_medium} alt="" />
             </Link>
           </div>
           <div className="card-details">
             <p className="title">{i.album.title}</p>
-            <p className="artist">
-              {i.artist.name}
-            </p>
+            <p className="artist">{i.artist.name}</p>
           </div>
         </div>
       ))}

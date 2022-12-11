@@ -1,4 +1,4 @@
-import { SEARCH_FOR_MUSIC, SET_QUERY } from "../actions";
+import { SET_QUERY } from "../actions";
 
 const initialState = {
   query: "",

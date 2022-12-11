@@ -8,7 +8,7 @@ const MusicPlayer = () => {
   const albumArt = useSelector((state) => state.playSongs.art);
   const duration = useSelector((state) => state.playSongs.duration);
   const song = useSelector((state) => state.playSongs.audio);
-  const [songVolume, setVolume] = useState(0.75);
+  const [songVolume, setVolume] = useState(0.5);
 
   let audio = new Audio(song);
 

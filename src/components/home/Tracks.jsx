@@ -8,7 +8,7 @@ const Tracks = () => {
   let tracks = useSelector((state) => state.data.tracks);
 
   const endpoint =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=ONE OK ROCK";
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=Paramore";
 
   useEffect(() => {
     dispatch(getTrackDataAction(endpoint));

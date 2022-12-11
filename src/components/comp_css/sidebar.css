@@ -41,7 +41,7 @@
     align-items: center;
 }
 
-.sidebar .navigation ul li a .search-field {
+.sidebar .navigation ul li a .search-field  {
     background: none;
     border-radius: 0;
     border: none;
@@ -51,6 +51,28 @@
     color: white;
     height: 20px;
     user-select: all;
+}
+
+.playlist-box{
+    background: none;
+    border-radius: 0;
+    border: none;
+    width: 150px;
+    font-size: 14px;
+    outline: none;
+    color: white;
+    height: 20px;
+    user-select: all;
+}
+
+.playlist-box::placeholder{
+    font-family: Outfit;
+    color: #b3b3b37a;
+}
+
+.playlist-list{
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .sidebar .navigation ul li a .search-field::placeholder {
