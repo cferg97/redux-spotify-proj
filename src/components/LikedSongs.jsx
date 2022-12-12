@@ -5,6 +5,7 @@ import {
   playSongArtistAction,
   playSongTrackAction,
   playSongArtAction,
+  removeLikeSongAction,
 } from "../redux/actions";
 import { useEffect } from "react";
 const LikedSongs = () => {
@@ -19,7 +20,6 @@ const LikedSongs = () => {
   const defineDuration = (t) => {
     return Math.floor(t / 60) + ":" + ("0" + Math.floor(t % 60)).slice(-2);
   };
-
 
   return (
     <div className="main-container">
@@ -69,16 +69,20 @@ const LikedSongs = () => {
           </div>
         </div>
 
-        <div id="tags">
-          <h3></h3>
-          <h3></h3>
-        </div>
         <hr />
         <div className="album-list">
           <table className="table">
             <tbody id="track-list">
               {songs.map((s, index) => (
                 <tr key={index + 21}>
+                  <td>
+                    <button id="remove-btn"
+                    onClick={() => {
+                      dispatch(removeLikeSongAction(s))
+                    }}>
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                  </td>
                   <td>{index + 1}</td>
                   <td
                     onClick={() => {

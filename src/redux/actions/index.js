@@ -72,6 +72,13 @@ export const likeSongAction = (i) => {
   };
 };
 
+export const removeLikeSongAction = (i) => {
+  return{
+    type: REMOVE_LIKE_SONG,
+    payload: i
+  }
+}
+
 export const getTrackDataAction = (endpoint) => {
   return async (dispatch, getState) => {
     try {

@@ -65,6 +65,15 @@ a:hover {
     margin-right:2vw;
 }
 
+#remove-btn{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
 #green-circle-inner {
     color: var(--black);
     font-size: 2em;

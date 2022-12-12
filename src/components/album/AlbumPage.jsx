@@ -135,6 +135,7 @@ const AlbumPage = () => {
                         ) : (
                           <i className="fa-regular fa-heart"></i>
                         )}
+                        
                         </span>
                       </td>
                       <td>{index + 1}</td>

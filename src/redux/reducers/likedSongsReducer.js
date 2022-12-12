@@ -14,8 +14,8 @@ const likedSongsReducer = (state = initialState, action) => {
     case REMOVE_LIKE_SONG:
       return {
         ...state,
-        list: state.list.filter((song, i) => {
-          return i !== action.payload;
+        list: state.list.filter((song) => {
+          return song !== action.payload;
         }),
       };
     default:
